@@ -1,0 +1,246 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@300&display=swap');
+
+body {
+	font-family: 'Roboto', sans-serif;
+	height: 100vh;
+	text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
+	box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
+}
+
+.cover-container.show {
+	opacity: 1;
+}
+
+h3 {
+	display: inline-block;
+}
+.cover-container {
+	opacity: 0;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		url('https://ak.jogurucdn.com/media/image/p15/media_gallery-2017-03-25-5-11_6c3dec0e459b23a43ada82f57703b4e5.jpg');
+	background-size: cover;
+	background-position: center;
+	transform-origin: top left;
+	transition: transform 0.5s linear;
+	width: 100vw;
+	min-height: 100vh;
+	padding: 50px;
+	transition: opacity 0.3s ease-out;
+}
+
+.nav-link {
+	padding: 0.25rem 0;
+	font-weight: 700;
+	color: rgba(255, 255, 255, 0.5);
+	margin-left: 1rem;
+	border-bottom: 0.25rem solid transparent;
+}
+
+.nav-link:hover {
+	color: rgba(255, 255, 255, 0.5);
+	border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+
+.nav-link.active {
+	color: white;
+	border-bottom-color: white;
+}
+
+.btn-secondary,
+.btn-secondary:hover {
+	color: #333;
+	text-shadow: none;
+}
+
+/* rotating navbar */
+.cover-container.rotate {
+	transform: rotate(-20deg);
+}
+
+.cover-container.rotate + nav li {
+	transform: translateX(0);
+	transition-delay: 0.3s;
+}
+
+.circle-container {
+	position: fixed;
+	top: -100px;
+	left: -100px;
+}
+
+.circle {
+	position: relative;
+	background-color: tomato;
+	border-radius: 50%;
+	height: 200px;
+	width: 200px;
+	transition: transform 0.5s linear;
+}
+
+.cover-container.rotate .circle {
+	transform: rotate(-70deg);
+}
+
+.circle button {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: 100px;
+	border: 0;
+	background: transparent;
+	font-size: 20px;
+	color: white;
+}
+
+.circle button:focus {
+	outline: 0;
+}
+
+#close {
+	top: 60%;
+	transform: rotate(90deg);
+	transform-origin: top left;
+}
+
+#open {
+	left: 60%;
+}
+
+nav.rotnav {
+	position: fixed;
+	bottom: 40px;
+	left: 0;
+	z-index: 100;
+}
+nav.rotnav ul {
+	list-style-type: none;
+}
+nav.rotnav ul li {
+	font-size: 20px;
+	color: white;
+	margin: 20px auto;
+	transform: translateX(-150%);
+	transition: transform 0.5s ease;
+}
+
+nav.rotnav ul li + li {
+	margin-left: 15px;
+	transform: translateX(-250%);
+}
+
+nav.rotnav ul li + li + li {
+	margin-left: 30px;
+	transform: translateX(-500%);
+}
+
+/* // adding the counter */
+.counter {
+	opacity: 1;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	text-align: center;
+	transform: translate(-50%, -50%);
+}
+
+.final {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	text-align: center;
+	transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%) scale(0);
+}
+
+h4 {
+	font-size: 20px;
+	margin: 5px;
+	text-transform: uppercase;
+}
+
+.counter.hide {
+	transform: translate(-50%, -50%) scale(0);
+	animation: hide 0.4s ease-out;
+}
+
+@keyframes hide {
+	0% {
+		transform: translate(-50%, -50%) scale(1);
+	}
+	100% {
+		transform: translate(-50%, -50%) scale(0);
+	}
+}
+
+.final.show {
+	transform: translate(-50%, -50%) scale(1);
+	animation: show 0.4s ease-out;
+}
+
+@keyframes show {
+	0% {
+		transform: translate(-50%, -50%) scale(0);
+	}
+	30% {
+		transform: translate(-50%, -50%) scale(1.4);
+	}
+	100% {
+		transform: translate(-50%, -50%) scale(1);
+	}
+}
+
+.nums {
+	color: #3498db;
+	font-size: 50px;
+	overflow: hidden;
+	position: relative;
+	width: 250px;
+	height: 50px;
+}
+
+.nums span {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotate(120deg);
+	transform-origin: bottom center;
+}
+
+.nums span.in {
+	transform: translate(-50%, -50%) rotate(0deg);
+	animation: goIn 0.5s ease-in-out;
+}
+
+.nums span.out {
+	transform: translate(-50%, -50%) rotate(-120deg);
+	animation: goOut 0.5s ease-in-out;
+}
+
+@keyframes goIn {
+	0% {
+		transform: translate(-50%, -50%) rotate(120deg);
+	}
+	30% {
+		transform: translate(-50%, -50%) rotate(-20deg);
+	}
+	60% {
+		transform: translate(-50%, -50%) rotate(-30deg);
+	}
+	100% {
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+}
+
+@keyframes goOut {
+	0% {
+		transform: translate(-50%, -50%) rotate(0deg);
+	}
+	60% {
+		transform: translate(-50%, -50%) rotate(20deg);
+	}
+	100% {
+		transform: translate(-50%, -50%) rotate(-120deg);
+	}
+}

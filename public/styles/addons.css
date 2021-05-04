@@ -1,0 +1,40 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css');
+
+.search {
+	position: relative;
+	height: 50px;
+}
+
+.search input {
+	background-color: rgba(220, 227, 235, 0.5);
+	height: 50px;
+	width: 50px;
+	border: 0;
+	font-size: 20px;
+	transition: width 0.5s ease;
+}
+
+.search .btn {
+	position: absolute;
+	left: 0;
+	height: 50px;
+	width: 50px;
+	border: 0;
+	font-size: 20px;
+	transition: transform 0.5s ease;
+	cursor: pointer;
+}
+
+.search .btn:focus {
+	outline: 0;
+}
+.search .input:focus {
+	outline: 0;
+}
+
+.search.active input {
+	width: 200px;
+}
+.search.active .btn {
+	transform: translateX(200px);
+}
