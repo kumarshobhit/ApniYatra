@@ -4,7 +4,7 @@ It is a web application designed to add, rate and review different homestays, di
 
 
 ## Live Demo
-For Live Demo go to https://kind-boyd-79481e.netlify.app/
+For Live Demo go to https://apni-yatra.herokuapp.com/
 
 ## Features
 * Authentication:
