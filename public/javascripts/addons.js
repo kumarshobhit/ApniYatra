@@ -11,13 +11,14 @@ btn.addEventListener('click',()=>{
 const camps=campgrounds.features ;
 showCamps(camps)
 
-input.addEventListener('change',e=>{
+input.addEventListener('input',e=>{
     const searchTerm=(e.target.value) ;
     if(searchTerm===''){
         showCamps(camps)
     }
     else {
-        const arr=camps.filter(e=>e.title===searchTerm)
+        // const arr=camps.filter(e=>e.title===searchTerm)
+        const arr=camps.filter(e=>e.title.toLowerCase().includes(searchTerm.toLowerCase()))
         if(arr.length==0) showCamps(camps)
        else  showCamps(arr)
     }
